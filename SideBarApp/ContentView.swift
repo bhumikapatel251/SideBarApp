@@ -33,6 +33,9 @@ struct ContentView: View {
                     } ))
                     .navigationTitle("Home")
             }
+            .onAppear {
+                isShowing = false
+            }
         }
     }
 }
@@ -48,7 +51,7 @@ struct HomeView: View {
         ZStack {
             Color(.white)
             
-            Text("Hello")
+            Text("Hellow")
                 .padding()
         }
        

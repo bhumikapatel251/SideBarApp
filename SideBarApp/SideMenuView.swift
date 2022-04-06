@@ -22,7 +22,11 @@ struct SideMenuView: View {
                 //Cell Items
                     .frame(height: 150)
                 ForEach(SideMenuModel.allCases, id: \.self) { option in
-                    SideMenuOptionView(viewModel: option)
+                   
+                    NavigationLink(destination: Text(option.title),
+                                   label: {
+                        SideMenuOptionView(viewModel: option)
+                    })
                     
                 }
                 Spacer()
