@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct SideMenuHeaderView: View {
+    @Binding  var isShowing : Bool
     var body: some View {
         ZStack(alignment: .topTrailing) {
+            Button(action: { isShowing.toggle() }, label: {
+                Image(systemName: "xmark")
+                    .frame(width: 32, height: 32)
+                    .foregroundColor(.white)
+                    .padding()
+            })
             VStack(alignment: .leading) {
                 Image("smile")
                     .resizable()
@@ -53,6 +60,6 @@ struct SideMenuHeaderView: View {
 
 struct SideMenuHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuHeaderView()
+        SideMenuHeaderView(isShowing: .constant(true))
     }
 }
