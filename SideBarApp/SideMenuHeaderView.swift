@@ -11,7 +11,11 @@ struct SideMenuHeaderView: View {
     @Binding  var isShowing : Bool
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            Button(action: { isShowing.toggle() }, label: {
+            Button(action: {
+                withAnimation(.spring()) {
+                    isShowing.toggle()
+                }
+                }, label: {
                 Image(systemName: "xmark")
                     .frame(width: 32, height: 32)
                     .foregroundColor(.white)
